@@ -13,23 +13,21 @@
         
         <Image Grid.ColumnSpan="4" Source="syncro.png"/>
 
-        <Entry Grid.ColumnSpan="3" Keyboard="Numeric" Placeholder="% Resistencia"  Text="{Binding Text}" Grid.Row="1"/>
+        <Entry Grid.ColumnSpan="3" Keyboard="Numeric" Placeholder="% Resistencia"  Text="{Binding Resistencia}" Grid.Row="1"/>
 
-        <Button Text="Calcular" Command="{Binding CalcularDañoCommand}" Grid.Row="1" Grid.Column="4"/>
-        <CollectionView x:Name="collectionView" Grid.Row="2" Grid.ColumnSpan="4" >
+        <Button Text="Calcular" Command="{Binding CalcularDañoCommand}"  Grid.Row="1" Grid.Column="4"/>
+        <CollectionView x:Name="collectionView" Grid.Row="2" Grid.ColumnSpan="4" ItemsSource="{Binding DañoSyncro}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <!--<Grid Padding="0,5">
-                        <Frame >
-                            <Label Text="{Binding .}" FontSize="20"></Label>
-                        </Frame>
-                    </Grid>-->
                     <HorizontalStackLayout>
                         <Frame >
                             <Label Padding="10" Text="{Binding Nivel}" FontSize="20"></Label>
                         </Frame>
                         <Frame>
                             <Label Padding="10" Text="{Binding DañoBase}" FontSize="20"></Label>
+                        </Frame>
+                        <Frame>
+                            <Label Padding="10" Text="{Binding DañoFinal}" FontSize="20"></Label>
                         </Frame>
                     </HorizontalStackLayout>
                 </DataTemplate>
