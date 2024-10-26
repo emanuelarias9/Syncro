@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Syncro.ViewModel;
 
 namespace Syncro
 {
@@ -18,6 +19,8 @@ namespace Syncro
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 
             return builder.Build();
         }
